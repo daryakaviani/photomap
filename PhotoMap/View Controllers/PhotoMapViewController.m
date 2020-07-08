@@ -91,7 +91,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"tagSegue"]) {
         LocationsViewController *locationsViewController = [segue destinationViewController];
-        //locationsViewController.post = post;
+        locationsViewController.delegate = self;
     }
 }
 

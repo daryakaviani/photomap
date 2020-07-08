@@ -9,8 +9,8 @@
 #import "LocationsViewController.h"
 #import "LocationCell.h"
 
-static NSString * const clientID = @"QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL";
-static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU";
+static NSString * const clientID = @"EHILBWDXVDEFQC25TQMS4I0PJEKPLXHMWJOTUPTLTROPAJAQ";
+static NSString * const clientSecret = @"0PD2OT3HC1CSPWXRGFNDKC0JITDPVMBINHMYWIUUMLEAEK0S";
 
 @interface LocationsViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -52,7 +52,7 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     NSDictionary *venue = self.results[indexPath.row];
     NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
     NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
-    [_delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
+    [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
     NSLog(@"%@, %@", lat, lng);
     
 }
